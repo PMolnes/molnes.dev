@@ -7,4 +7,17 @@
 		@apply text-white;
 		@apply bg-zinc-900;
 	}
+
+	p {
+		@apply text-gray-400;
+	}
+
+	a {
+		@apply text-white;
+		@apply underline;
+	}
+
+	a:active {
+		@apply text-gray-300;
+	}
 }
