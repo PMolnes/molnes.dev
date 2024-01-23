@@ -1,6 +1,7 @@
 <script lang="ts">
 	import sopraPortait from '$lib/assets/sopra-portrett.jpg';
 	import NavList from '$lib/components/NavList.svelte';
+	import ProjectList from '$lib/components/ProjectList.svelte';
 </script>
 
 <main class="flex flex-col md:flex-row mx-4 my-8">
@@ -21,9 +22,9 @@
 		</div>
 	</div>
 	<div>
-		<p>project 1</p>
-		<p>project 1</p>
-		<p>project 1</p>
-		<p>project 1</p>
+		<section class="mt-20" id="projects">
+			<h2 class="font-mono tracking-widest mb-6 md:sr-only">PROJECTS</h2>
+			<ProjectList />
+		</section>
 	</div>
 </main>
