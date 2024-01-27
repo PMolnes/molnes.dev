@@ -11,7 +11,8 @@
 		<p class="max-w-80">
 			I am Full-Stack developer, pursuing a Masters in Informatics while working part-time for <a
 				class="underline"
-				href="https://solwr.com">Solwr</a
+				href="https://solwr.com"
+				target="_blank">Solwr</a
 			>.
 		</p>
 		<p class="max-w-80 mt-4">In my spare time I work on side-projects and enjoy bouldering.</p>
