@@ -1,6 +1,6 @@
 export interface Project {
 	name: string;
 	description: string;
-	link: string;
+	slug: string;
 	myRoles: string[] | string;
 }

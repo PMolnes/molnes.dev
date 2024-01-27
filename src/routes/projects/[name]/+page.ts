@@ -3,17 +3,17 @@ import { projects } from '$lib/projects/projects';
 import { error } from '@sveltejs/kit';
 
 export const load: PageLoad = async ({ params }) => {
-  const link = params.name;
+	const slug = params.name;
 
-  const project = projects.find((p) => p.link === link);
+	const project = projects.find((p) => p.slug === slug);
 
-  if (!project) {
-    error(404, {
-      message: 'Not Found'
-    });
-  }
+	if (!project) {
+		error(404, {
+			message: 'Not Found'
+		});
+	}
 
-  return {
-    project
-  };
+	return {
+		project
+	};
 };
