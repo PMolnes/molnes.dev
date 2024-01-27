@@ -1,4 +1,5 @@
 <script lang="ts">
+	export let data;
 </script>
 
-<h1>Project Page</h1>
+<h1>{data.project.name}</h1>

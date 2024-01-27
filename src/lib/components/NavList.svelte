@@ -2,8 +2,8 @@
 	const navigationItems = ['PROJECTS', 'EXPERIENCE', 'EDUCATION'];
 </script>
 
-<nav class="hidden md:block">
-	<ul class="flex flex-col font-mono gap-2">
+<nav class="hidden lg:block mt-20">
+	<ul class="flex flex-col font-mono gap-5">
 		{#each navigationItems as item, index}
 			<li>
 				<a
