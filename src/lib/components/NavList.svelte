@@ -8,7 +8,7 @@
 			<li>
 				<a
 					class="flex items-center gap-2 no-underline text-sm tracking-widest text-gray-400 hover:text-white group"
-					href="#projects"
+					href={`#${item.toLowerCase()}`}
 				>
 					<span>0{index + 1}</span>
 					<span
