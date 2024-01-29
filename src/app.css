@@ -6,6 +6,7 @@
 	html {
 		@apply text-white;
 		@apply bg-zinc-900;
+		@apply scroll-smooth;
 	}
 
 	p {

@@ -22,7 +22,7 @@
 	}
 </script>
 
-<section class="mt-20">
+<section id="experience" class="mt-20">
 	<h1 class="font-mono mb-6 tracking-widest lg:sr-only">EXPERIENCE</h1>
 	<div class="lg:grid lg:grid-cols-2 lg:gap-4">
 		{#each experiences as experience}
