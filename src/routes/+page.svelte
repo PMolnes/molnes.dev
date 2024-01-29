@@ -1,11 +1,14 @@
 <script lang="ts">
 	import sopraPortait from '$lib/assets/sopra-portrett.jpg';
+	import ExperienceList from '$lib/components/ExperienceList.svelte';
 	import NavList from '$lib/components/NavList.svelte';
 	import ProjectList from '$lib/components/ProjectList.svelte';
 </script>
 
-<main class="flex flex-col lg:flex-row lg:justify-center lg:items-center gap-3 min-h-screen">
-	<div class="flex flex-col lg:min-h-screen justify-between lg:px-24 md:px-16 sm:px-12 px-4 py-20">
+<main class="flex flex-col lg:flex-row lg:justify-center gap-3 relative">
+	<div
+		class="flex flex-col lg:min-h-screen justify-between lg:px-24 md:px-16 sm:px-12 px-4 py-20 sticky top-0 max-h-screen"
+	>
 		<h1 class="text-6xl font-extrabold mb-2">Petter Molnes</h1>
 		<h2 class="text-2xl font-bold mb-6">Software Engineer</h2>
 		<p class="max-w-80">
@@ -27,7 +30,8 @@
 			>
 		</div>
 	</div>
-	<div class="min-h-screen lg:px-24 md:px-16 sm:px-12 px-4 py-20">
+	<div class="min-h-screen lg:px-24 md:px-16 lg:max-w-[800px] sm:px-12 px-4 py-20">
 		<ProjectList />
+		<ExperienceList />
 	</div>
 </main>
