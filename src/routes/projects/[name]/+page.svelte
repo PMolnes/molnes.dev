@@ -1,5 +1,7 @@
 <script lang="ts">
-	export let data;
+	import type { PageData } from './$types';
+
+	export let data: PageData;
 </script>
 
 <svelte:head>
@@ -29,60 +31,19 @@
 				</div>
 			</div>
 			<div>
-				<section>
-					<h3 class="text-5xl font-semibold">About</h3>
-					<p class="leading-10 text-lg">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi esse molestiae
-						voluptatibus consequuntur voluptate sunt alias necessitatibus odio eveniet, eos, optio
-						rerum dolorum, aliquam adipisci inventore! Ducimus officiis eveniet libero. Quos ex
-						laborum provident fugit id sit tempora totam nobis repellat illum corrupti, natus quidem
-						exercitationem ipsum voluptatibus voluptas autem voluptatem! Nisi tenetur quo odit ab
-						dolor facilis voluptatum non. Labore quidem ipsam rem iste quo molestiae. Harum, maxime
-						exercitationem in culpa voluptates, accusamus nam ea deleniti quisquam, aliquam
-						perspiciatis earum cumque doloremque adipisci sint eaque commodi suscipit eveniet eos!
-						Modi, sint? Nostrum corrupti quibusdam ratione velit. Tempore optio sit assumenda quis
-						laboriosam animi possimus ea velit quas? Suscipit doloremque accusamus quam temporibus
-						iure deserunt doloribus ipsum voluptas exercitationem tempore. Quis consequatur autem
-						officiis modi. Provident corporis porro suscipit repudiandae doloremque assumenda at
-						ipsum consequuntur! Cumque incidunt praesentium accusantium magnam odio eligendi
-						quibusdam suscipit natus exercitationem a mollitia, quo modi. Lorem ipsum dolor sit amet
-						consectetur adipisicing elit. Modi esse molestiae voluptatibus consequuntur voluptate
-						sunt alias necessitatibus odio eveniet, eos, optio rerum dolorum, aliquam adipisci
-						inventore! Ducimus officiis eveniet libero. Quos ex laborum provident fugit id sit
-						tempora totam nobis repellat illum corrupti, natus quidem exercitationem ipsum
-						voluptatibus voluptas autem voluptatem! Nisi tenetur quo odit ab dolor facilis
-						voluptatum non. Labore quidem ipsam rem iste quo molestiae. Harum, maxime exercitationem
-						in culpa voluptates, accusamus nam ea deleniti quisquam, aliquam perspiciatis earum
-						cumque doloremque adipisci sint eaque commodi suscipit eveniet eos! Modi, sint? Nostrum
-						corrupti quibusdam ratione velit. Tempore optio sit assumenda quis laboriosam animi
-						possimus ea velit quas? Suscipit doloremque accusamus quam temporibus iure deserunt
-						doloribus ipsum voluptas exercitationem tempore. Quis consequatur autem officiis modi.
-						Provident corporis porro suscipit repudiandae doloremque assumenda at ipsum
-						consequuntur! Cumque incidunt praesentium accusantium magnam odio eligendi quibusdam
-						suscipit natus exercitationem a mollitia, quo modi.
+				<section class="mb-8">
+					<h3 class="text-5xl mb-2 font-semibold">About</h3>
+					<p class="leading-10 text-lg whitespace-pre-line">
+						{data.project.about}
 					</p>
 				</section>
-				<section>
-					<h3 class="text-5xl font-semibold">Challenges</h3>
-					<p class="leading-10 text-lg">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi esse molestiae
-						voluptatibus consequuntur voluptate sunt alias necessitatibus odio eveniet, eos, optio
-						rerum dolorum, aliquam adipisci inventore! Ducimus officiis eveniet libero. Quos ex
-						laborum provident fugit id sit tempora totam nobis repellat illum corrupti, natus quidem
-						exercitationem ipsum voluptatibus voluptas autem voluptatem! Nisi tenetur quo odit ab
-						dolor facilis voluptatum non. Labore quidem ipsam rem iste quo molestiae.
-					</p>
+				<section class="mb-8">
+					<h3 class="text-5xl font-semibold mb-2">Challenges</h3>
+					{@html `<p class="leading-10 text-lg whitespace-pre-line">${data.project.challenges}</p>`}
 				</section>
-				<section>
-					<h3 class="text-5xl font-semibold">Results</h3>
-					<p class="leading-10 text-lg">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi esse molestiae
-						voluptatibus consequuntur voluptate sunt alias necessitatibus odio eveniet, eos, optio
-						rerum dolorum, aliquam adipisci inventore! Ducimus officiis eveniet libero. Quos ex
-						laborum provident fugit id sit tempora totam nobis repellat illum corrupti, natus quidem
-						exercitationem ipsum voluptatibus voluptas autem voluptatem! Nisi tenetur quo odit ab
-						dolor facilis voluptatum non. Labore quidem ipsam rem iste quo molestiae.
-					</p>
+				<section class="mb-8">
+					<h3 class="text-5xl mb-2 font-semibold">Results</h3>
+					{@html `<p class="leading-10 text-lg whitespace-pre-line">${data.project.results}</p>`}
 				</section>
 			</div>
 		</div>
