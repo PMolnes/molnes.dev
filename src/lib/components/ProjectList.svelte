@@ -1,6 +1,6 @@
 <script lang="ts">
 	import ProjectCard from './ProjectCard.svelte';
-	import { projects } from '$lib/projects/projects';
+	import { projects } from '$lib/content/projects';
 </script>
 
 <section class="mt-20 lg:mt-0 group" id="projects">
