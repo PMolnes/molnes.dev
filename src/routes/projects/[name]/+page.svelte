@@ -13,7 +13,8 @@
 		<h1 class="text-7xl font-extrabold mb-2">{data.project.name}</h1>
 		<h2 class="text-2xl text-gray-400 mb-16">{data.project.description}</h2>
 		<div class="flex lg:flex-row flex-col gap-8 relative">
-			<div class="bg-zinc-800 py-4 px-6 min-w-80 lg:self-start lg:sticky lg:top-10">
+      <div class="bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-400 min-w-80 lg:self-start lg:sticky lg:top-10 p-1">
+			<div class="bg-zinc-800 py-4 px-6">
 				<div class="mb-4">
 					<h3 class="text-gray-400 text-sm mb-1">Status</h3>
 					<p class="text-white font-semibold">Finished</p>
