@@ -1,5 +1,4 @@
 <script lang="ts">
-	import sopraPortait from '$lib/assets/sopra-portrett.jpg';
 	import ExperienceList from '$lib/components/ExperienceList.svelte';
 	import NavList from '$lib/components/NavList.svelte';
 	import ProjectList from '$lib/components/ProjectList.svelte';
@@ -21,7 +20,11 @@
 		<p class="max-w-80 mt-4">In my spare time I work on side-projects and enjoy bouldering.</p>
 		<NavList />
 		<div id="socials" class="flex items-center gap-4 mt-10 lg:mt-auto">
-			<img class="grayscale w-16 rounded-full" src={sopraPortait} alt="Portrait" />
+			<img
+				class="grayscale w-16 rounded-full"
+				src="/assets/images/sopra-portrett.jpg"
+				alt="Portrait"
+			/>
 			<a class="underline" href="https://github.com/PMolnes" target="_blank">GitHub</a>
 			<a
 				class="underline"
