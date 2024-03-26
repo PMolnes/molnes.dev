@@ -40,12 +40,11 @@
           </ul>
         </div>
 			</div>
+    </div>
 			<div>
 				<section class="mb-8">
 					<h3 class="text-5xl mb-2 font-semibold">About</h3>
-					{@html `<p class="leading-10 text-lg whitespace-pre-line">
-						${data.project.about}
-					</p>`}
+					{@html `<p class="leading-10 text-lg whitespace-pre-line">${data.project.about}</p>`}
 				</section>
 				<section class="mb-8">
 					<h3 class="text-5xl font-semibold mb-2">Challenges</h3>
