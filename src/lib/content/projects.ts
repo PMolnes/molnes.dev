@@ -1,4 +1,4 @@
-import type { Project } from '$lib/types';
+import type { Project } from '../types';
 
 export const projects: Project[] = [
 	{
@@ -20,13 +20,37 @@ export const projects: Project[] = [
 			'Text to Speech',
 			'Touch Interface',
 			'Warehouse Management'
-		]
+		],
+		links: [
+			{
+				href: 'https://ntnuopen.ntnu.no/ntnu-xmlui/handle/11250/3076971',
+				title: 'Thesis'
+			},
+			{
+				href: 'https://youtu.be/ldt2QxZ4jbU',
+				title: 'YouTube Video'
+			},
+			{
+				href: 'https://gitlab.com/IDATA-2900-Group-1/voice-pick-frontend',
+				title: 'iOS App Repository'
+			},
+			{
+				href: 'https://gitlab.com/IDATA-2900-Group-1/voice-pick-backend',
+				title: 'REST API Repository'
+			},
+			{
+				href: 'https://gitlab.com/IDATA-2900-Group-1/voice-pick-iac',
+				title: 'IaC Repository'
+			}
+		],
+		technologies: ['Swift', 'Spring Boot', 'Keycloak', 'Terraform', 'GitLab']
 	},
 	{
 		name: 'petterinit',
 		description: 'Automate setup for TailwindCSS in React, Vue, and SvelteKit.',
 		slug: 'petterinit',
-		about: '',
+		about:
+			'At one point I found myself repeating the same steps to setup TailwindCSS for my new projects. Browsing to the setup guide, installing dependencies, copy pasting configuration files, etc.\nSince I often created small projects to test an idea, I decided to automate these dull steps. petter-init is a CLI tool you can install from <a target="_blank" href="https://www.npmjs.com/package/petter-init">npmjs.com</a>. The tool lets you choose either React, Vue, or SvelteKit, scaffolds a new project with your selected options, and completely configures TailWindCSS for your project. You can instantly start typing out TailwindCSS-classes instead having to manually setup it up first.\n For a detailed explanation on how it works, you can visit the docs for this project.',
 		challenges: '',
 		results: '',
 		myRoles: ['Solo Developer'],
@@ -34,7 +58,8 @@ export const projects: Project[] = [
 			'Automatic TailwindCSS Project Scaffolding',
 			'Available on NPM',
 			'npm, yarn, and pnpm support'
-		]
+		],
+		technologies: ['JavaScript', 'npm', 'GitHub', 'VitePress', 'Netlify']
 	},
 	{
 		name: 'SolwrSolwr',
@@ -45,7 +70,8 @@ export const projects: Project[] = [
 		results: '',
 		slug: 'solwrsolwr',
 		myRoles: ['Solo Developer'],
-		features: ['Saving Highscores', 'Live update with Firebase WebSockets']
+		features: ['Saving Highscores', 'Live update with Firebase WebSockets'],
+		technologies: ['Vue', 'TypeScript', 'Firebase', 'GitHub', 'Netlify']
 	},
 	{
 		name: 'Trails',
@@ -62,6 +88,7 @@ export const projects: Project[] = [
 			'Social Feed',
 			'Following people',
 			'User Authentication'
-		]
+		],
+		technologies: ['Flutter', 'Firebase', 'Google Maps API', 'GitHub']
 	}
 ];

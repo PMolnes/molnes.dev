@@ -8,6 +8,8 @@ export interface Project {
 	myRoles: string[];
 	client?: string | null;
 	features: string[];
+	links?: Link[];
+	technologies: string[];
 }
 
 export interface Experience {
@@ -15,4 +17,9 @@ export interface Experience {
 	title: string;
 	startDate: Date;
 	endDate?: Date;
+}
+
+export interface Link {
+	href: string;
+	title: string;
 }
