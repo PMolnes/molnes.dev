@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Experience } from '$lib/types';
+	import { formatDurationString } from '$lib/util/dateFormatter';
 
 	export let experience: Experience;
 
@@ -8,20 +9,6 @@
 			return 'col-span-2';
 		}
 		return '';
-	}
-
-	function formatDate(date: Date) {
-		return new Date(date).toLocaleDateString(undefined, {
-			month: 'short',
-			year: 'numeric'
-		});
-	}
-
-	function formatDurationString(experience: Experience) {
-		if (experience.endDate) {
-			return `${formatDate(experience.startDate)} - ${formatDate(experience.endDate)}`;
-		}
-		return `${formatDate(experience.startDate)}`;
 	}
 </script>
 
@@ -33,5 +20,5 @@
 	<h2 class="text-xl font-bold overflow">{experience.title}</h2>
 	<p class="mb-4">{experience.company}</p>
 	<p class="text-gray-400 text-sm">Duration</p>
-	<p class="text-white">{formatDurationString(experience)}</p>
+	<p class="text-white">{formatDurationString(experience.startDate, experience.endDate)}</p>
 </div>
