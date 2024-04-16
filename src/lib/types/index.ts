@@ -19,6 +19,13 @@ export interface Experience {
 	endDate?: Date;
 }
 
+export interface Education {
+	title: string;
+	school: string;
+	startDate: Date;
+	endDate?: Date;
+}
+
 export interface Link {
 	href: string;
 	title: string;

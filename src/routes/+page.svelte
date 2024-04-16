@@ -1,5 +1,6 @@
 <script lang="ts">
-	import ExperienceList from '$lib/components/ExperienceList.svelte';
+	import EducationList from '$lib/components/EducationList.svelte';
+import ExperienceList from '$lib/components/ExperienceList.svelte';
 	import NavList from '$lib/components/NavList.svelte';
 	import ProjectList from '$lib/components/ProjectList.svelte';
 </script>
@@ -36,5 +37,6 @@
 	<div class="min-h-screen lg:px-24 md:px-16 lg:max-w-[800px] sm:px-12 px-4 py-20">
 		<ProjectList />
 		<ExperienceList />
+    <EducationList />
 	</div>
 </main>
