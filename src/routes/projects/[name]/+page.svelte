@@ -1,5 +1,6 @@
 <script lang="ts">
-	import type { PageData } from './$types';
+	import BackIcon from '$lib/icons/BackIcon.svelte';
+import type { PageData } from './$types';
 
 	export let data: PageData;
 </script>
@@ -9,6 +10,10 @@
 </svelte:head>
 
 <main class="grid place-items-center lg:px-24 md:px-16 sm:px-12 px-4 my-20">
+  <a href="/" class="flex absolute top-5 left-5 justify-center items-center gap-1 hover:bg-gray-400/10 px-4 py-2">
+    <BackIcon/>
+    <p class="text-white">Back</p>
+  </a>
 	<div class="max-w-screen-xl flex flex-col">
 		<h1 class="text-7xl font-extrabold mb-2">{data.project.name}</h1>
 		<h2 class="text-2xl text-gray-400 mb-16">{data.project.description}</h2>
