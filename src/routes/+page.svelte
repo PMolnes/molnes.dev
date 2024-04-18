@@ -1,6 +1,6 @@
 <script lang="ts">
 	import EducationList from '$lib/components/EducationList.svelte';
-import ExperienceList from '$lib/components/ExperienceList.svelte';
+  import ExperienceList from '$lib/components/ExperienceList.svelte';
 	import NavList from '$lib/components/NavList.svelte';
 	import ProjectList from '$lib/components/ProjectList.svelte';
 </script>
