@@ -3,8 +3,6 @@
   import { projects } from "$lib/content/projects";
   import Fuse from "fuse.js";
 
-
-
   const options = { keys: ["slug"] };
   const fuse = new Fuse(projects, options);
   const results = fuse.search($page.url.pathname.substring(10))
