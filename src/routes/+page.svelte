@@ -5,6 +5,10 @@
 	import ProjectList from '$lib/components/ProjectList.svelte';
 </script>
 
+<svelte:head>
+	<title>molnes.dev</title>
+</svelte:head>
+
 <main class="flex flex-col lg:flex-row lg:justify-center gap-3 relative">
 	<div
 		class="flex flex-col lg:min-h-screen justify-between lg:px-24 md:px-16 sm:px-12 px-4 py-20 lg:sticky lg:top-0 max-h-screen"
