@@ -28,7 +28,7 @@
 				target="_blank">Solwr</a
 			>.
 		</p>
-		<p class="max-w-80 mt-4">In my spare time I work on side-projects and enjoy bouldering.</p>
+		<p class="max-w-80 mt-4">In my spare time I work on side-projects and enjoy brazilian jiu-jitsu.</p>
 		<NavList />
 		<div id="socials" class="flex items-center gap-4 mt-10 lg:mt-auto">
 			<img
