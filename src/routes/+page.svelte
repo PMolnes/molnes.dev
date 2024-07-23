@@ -16,7 +16,13 @@
 		<h1 class="text-6xl font-extrabold mb-2 bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-400 text-transparent bg-clip-text">Petter Molnes</h1>
 		<h2 class="text-2xl font-bold mb-6">Software Engineer</h2>
 		<p class="max-w-80">
-			I am Full-Stack developer, pursuing a Masters in Informatics while working part-time for <a
+			I am Full-Stack developer, pursuing a 
+      <a
+        class="underline"
+        href="https://www.ntnu.no/studier/midt"
+        target="_blank"
+      >Masters in Computer Science
+      </a> while working part-time for <a
 				class="underline"
 				href="https://solwr.com"
 				target="_blank">Solwr</a
