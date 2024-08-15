@@ -2,6 +2,12 @@ import type { Experience } from '$lib/types';
 
 export const experiences: Experience[] = [
 	{
+		company: 'Sopra Steria',
+		title: 'Summer Intern',
+		startDate: new Date('2024-06-17'),
+		endDate: new Date('2024-07-26')
+	},
+	{
 		company: 'Solwr',
 		title: 'Full-Stack Developer',
 		startDate: new Date('2021-09-14')

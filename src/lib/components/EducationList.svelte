@@ -4,7 +4,7 @@
   
 </script>
 
-<section id="education" class="mt-20">
+<section id="education" class="mt-20 group">
   <h1 class="font-mono mb-6 tracking-widest lg:sr-only">EDUCATION</h1>
     {#each educations as education}
     <div
