@@ -5,7 +5,7 @@ export const educations: Education[] = [
 		title: 'Master in Computer Science',
 		school: 'NTNU Trondheim',
 		startDate: new Date('2023-08-01'),
-		endDate: new Date('2025-05-20')
+		endDate: new Date('2025-06-23')
 	},
 	{
 		title: 'Bachelor in Computer Science',

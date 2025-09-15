@@ -3,19 +3,10 @@
 	import { formatDurationString } from '$lib/util/dateFormatter';
 
 	export let experience: Experience;
-
-	function spanTwo(company: string) {
-		if (company == 'Solwr') {
-			return 'col-span-2';
-		}
-		return '';
-	}
 </script>
 
 <div
-	class="{spanTwo(
-		experience.company
-	)} bg-zinc-800 block p-14 pr-20 mb-4 lg:mb-0 lg:group-hover:opacity-50 lg:hover:!opacity-100 lg:hover:scale-105 transition-all"
+	class="bg-zinc-800 block p-14 pr-20 mb-4 lg:mb-0 lg:group-hover:opacity-50 lg:hover:!opacity-100 lg:hover:scale-105 transition-all"
 >
 	<h2 class="text-xl font-bold overflow">{experience.title}</h2>
 	<p class="mb-4">{experience.company}</p>
