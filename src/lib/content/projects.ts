@@ -2,24 +2,24 @@ import type { Project } from '../types';
 
 export const projects: Project[] = [
 	{
-		name: 'Simple Java Deobfuscator',
+		name: 'Master Thesis',
 		description:
-			'A source code deobfuscation tool for Java, developed as part of my Master Thesis at NTNU.',
-		slug: 'simple-java-deobfuscator',
+			'Using LLMs to detect malware and classify CVE vulnerabilities from decompiled Java binaries.',
+		slug: 'master-thesis',
 		about:
-			'Simple Java Deobfuscator is the tool I created as part of my Master Thesis in Computer Science at NTNU Trondheim. The thesis explores techniques for deobfuscating Java source code, focusing on static analysis approaches to reverse common obfuscation patterns.\nThe tool processes Java source files using abstract syntax tree (AST) analysis to identify and simplify obfuscated code constructs. It evaluates constant string expressions, resolves variable references, and simplifies StringBuilder and StringBuffer chains back into readable string literals. By walking the AST and maintaining scope-aware variable tracking, the tool can resolve string values across method and block boundaries.',
+			'This is the project me and Eduard created for our Master Thesis in Computer Science at NTNU Trondheim. The thesis explores whether large language models (LLMs) without fine-tuning can be leveraged to detect malicious behaviour in code, specifically in JAR files. Furthermore, it explores the capabilities of LLMs to identify which vulnerabilities the malware exploits.\nThe result is a static analysis pipeline consisting of decompilation, deobfuscation, LLM summarisation of code, similarity search against a vector database of CVEs, and CVE classification using LLMs. The system supports multiple LLM providers, including OpenAI, Gemini, and self-hosted models such as Llama. A custom Java deobfuscation tool was also created as part of this project, using JavaParser to resolve obfuscated string literals in decompiled code.',
 		challenges:
-			'One of the main challenges was handling the variety of obfuscation techniques that can be applied to Java source code. String obfuscation alone can take many forms: concatenation of fragments, use of StringBuilder or StringBuffer chains, variable indirection, and method call chains. Each of these patterns required specific handling in the AST visitor.\nAnother significant challenge was maintaining correct scope tracking. Variables can be declared at different levels — globally, within methods, or within nested blocks — and a deobfuscator must resolve references in the correct scope to avoid incorrect transformations. I solved this using a scope stack, where each new method or block pushes a new scope, and variable lookups traverse the stack from innermost to outermost scope.\nHandling circular references was also a concern. If variable A references variable B, which in turn references A, the evaluator could enter an infinite loop. I addressed this by tracking which variables are currently being resolved and breaking the cycle when a circular reference is detected.',
+			'A critical challenge was the lack of open-source deobfuscation tools for Java. Existing tools like Java Deobfuscator were unable to detect obfuscation patterns across the malware dataset. Therefore, we created a custom deobfuscation tool using JavaParser to resolve obfuscated string literals, which proved important for the LLM to understand the code and generate accurate search queries.\nAnother challenge was the similarity search for CVE classification. Many CVEs have similar descriptions, and some are unspecified, making it difficult to retrieve the correct vulnerability. We used cosine similarity with a Milvus vector database to search for relevant CVEs, and iterated on the search query generation to improve results.\nWorking with live malware required strict security measures. All development involving malware occurred in contained environments using GitHub Codespaces, and the database was hosted on a separate Hetzner Cloud server to isolate it from the malware execution environment.',
 		results:
-			'The finished tool is a command-line Java application that takes an input directory of obfuscated Java source files and produces a deobfuscated output directory. It successfully handles constant string evaluation, StringBuilder and StringBuffer chain simplification, method call evaluation for common String methods such as substring, toUpperCase, toLowerCase, trim, replace, and concat.\nThrough this project, I deepened my understanding of static program analysis, compiler design concepts such as AST traversal and visitor patterns, and the security implications of code obfuscation. The thesis provided valuable insight into both the offensive and defensive aspects of software protection.',
-		myRoles: ['Solo Developer'],
+			'For malware detection, the system achieved 97% mean accuracy across 3839 analysed JAR binaries without any fine-tuning, relying solely on zero-shot prompting. This competes with LLMs fine-tuned on malicious/benign datasets.\nFor CVE classification, the O4-mini model achieved a 60.8% recall@10, 42% accuracy, and 69% conditional accuracy. These results are the first empirical assessment of CVE attribution performed directly on thousands of obfuscated and compiled malicious binaries, establishing a baseline for future research.\nThe resulting system analyses files at a cost of approximately $0.03 USD per file, which is 60 to 88 times less expensive than commercial tools such as VirusTotal and CrowdStrike Falcon. This lowers the barrier for organisations to conduct malware analysis.',
+		myRoles: ['Developer', 'Researcher'],
 		features: [
-			'Constant String Evaluation',
-			'StringBuilder/StringBuffer Simplification',
-			'Scope-Aware Variable Tracking',
-			'Circular Reference Detection',
-			'String Method Evaluation',
-			'Batch File Processing'
+			'LLM-based Malware Detection',
+			'CVE Vulnerability Classification',
+			'Java Decompilation and Deobfuscation',
+			'Vector Similarity Search with Milvus',
+			'Retrieval-Augmented Generation (RAG)',
+			'Multi-LLM Provider Support'
 		],
 		links: [
 			{
@@ -28,10 +28,10 @@ export const projects: Project[] = [
 			},
 			{
 				href: 'https://github.com/PMolnes/simple-java-deobfuscator',
-				title: 'Repository'
+				title: 'Deobfuscator Repository'
 			}
 		],
-		technologies: ['Java', 'JavaParser', 'Maven', 'GitHub']
+		technologies: ['Python', 'Java', 'OpenAI', 'Gemini', 'Milvus', 'JavaParser', 'GitHub']
 	},
 	{
 		name: 'Voice Pluck',
