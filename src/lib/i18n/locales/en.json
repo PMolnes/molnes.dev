@@ -1,0 +1,38 @@
+{
+	"nav": {
+		"projects": "PROJECTS",
+		"experience": "EXPERIENCE",
+		"education": "EDUCATION"
+	},
+	"home": {
+		"title": "Petter Molnes",
+		"subtitle": "Software Engineer",
+		"intro": "I am a fullstack developer with a Masters in Computer Science from NTNU.",
+		"hobbies": "In my spare time I work on side-projects and enjoy brazilian jiu-jitsu."
+	},
+	"project": {
+		"status": "Status",
+		"status_finished": "Finished",
+		"my_roles": "My Role(s)",
+		"technologies": "Technologies",
+		"about": "About",
+		"challenges": "Challenges",
+		"results": "Results",
+		"links": "Links",
+		"back": "Back"
+	},
+	"experience": {
+		"title": "Software Engineer",
+		"summer_intern": "Summer Intern",
+		"full_stack_developer": "Full-Stack Developer",
+		"shuttle_driver": "Shuttle Driver",
+		"store_clerk": "Store Clerk",
+		"duration": "Duration"
+	},
+	"education": {
+		"master": "Master in Computer Science",
+		"bachelor": "Bachelor in Computer Science",
+		"preliminary": "Preliminary Course for Engineering",
+		"duration": "Duration"
+	}
+}

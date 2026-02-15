@@ -5,18 +5,27 @@ export const educations: Education[] = [
 		title: 'Master in Computer Science',
 		school: 'NTNU Trondheim',
 		startDate: new Date('2023-08-01'),
-		endDate: new Date('2025-06-23')
+		endDate: new Date('2025-06-23'),
+		nb: {
+			title: 'Master i informatikk'
+		}
 	},
 	{
 		title: 'Bachelor in Computer Science',
 		school: 'NTNU Aalesund',
 		startDate: new Date('2020-08-01'),
-		endDate: new Date('2023-05-20')
+		endDate: new Date('2023-05-20'),
+		nb: {
+			title: 'Bachelor i informatikk'
+		}
 	},
 	{
 		title: 'Preliminary Course for Engineering',
 		school: 'NTNU Aalesund',
 		startDate: new Date('2019-08-01'),
-		endDate: new Date('2020-05-15')
+		endDate: new Date('2020-05-15'),
+		nb: {
+			title: 'Ingeniørfaglig kurs'
+		}
 	}
 ];

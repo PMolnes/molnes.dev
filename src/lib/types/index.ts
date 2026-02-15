@@ -10,6 +10,13 @@ export interface Project {
 	features: string[];
 	links?: Link[];
 	technologies: string[];
+	nb?: {
+		description?: string;
+		about?: string;
+		challenges?: string;
+		results?: string;
+		myRoles?: string[];
+	};
 }
 
 export interface Experience {
@@ -17,6 +24,9 @@ export interface Experience {
 	title: string;
 	startDate: Date;
 	endDate?: Date;
+	nb?: {
+		title?: string;
+	};
 }
 
 export interface Education {
@@ -24,6 +34,9 @@ export interface Education {
 	school: string;
 	startDate: Date;
 	endDate?: Date;
+	nb?: {
+		title?: string;
+	};
 }
 
 export interface Link {
