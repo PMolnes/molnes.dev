@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Project } from '$lib/types';
+	import { getProjectContent } from '$lib/util/i18nHelpers';
 
 	export let project: Project;
 </script>
@@ -9,5 +10,5 @@
 	class="bg-zinc-800 block p-14 pr-20 mb-4 lg:group-hover:opacity-50 lg:hover:!opacity-100 lg:hover:scale-105 transition-all"
 >
 	<h3 class="text-2xl font-bold">{project.name}</h3>
-	<p class="mb-4">{project.description}</p>
+	<p class="mb-4">{$getProjectContent(project).description}</p>
 </a>

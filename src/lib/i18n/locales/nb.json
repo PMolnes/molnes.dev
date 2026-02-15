@@ -1,0 +1,38 @@
+{
+	"nav": {
+		"projects": "PROSJEKTER",
+		"experience": "ERFARING",
+		"education": "UTDANNING"
+	},
+	"home": {
+		"title": "Petter Molnes",
+		"subtitle": "Programvareutvikler",
+		"intro": "Jeg er en fullstack-utvikler med en Master i informatikk fra NTNU.",
+		"hobbies": "På fritiden jobber jeg med sideprosjekter og liker brasiliansk jiu-jitsu."
+	},
+	"project": {
+		"status": "Status",
+		"status_finished": "Ferdig",
+		"my_roles": "Min rolle(r)",
+		"technologies": "Teknologier",
+		"about": "Om",
+		"challenges": "Utfordringer",
+		"results": "Resultater",
+		"links": "Lenker",
+		"back": "Tilbake"
+	},
+	"experience": {
+		"title": "Programvareutvikler",
+		"summer_intern": "Sommerpraktikant",
+		"full_stack_developer": "Fullstack-utvikler",
+		"shuttle_driver": "Sjåfør",
+		"store_clerk": "Butikkmedarbeider",
+		"duration": "Varighet"
+	},
+	"education": {
+		"master": "Master i informatikk",
+		"bachelor": "Bachelor i informatikk",
+		"preliminary": "Ingeniørfaglig kurs",
+		"duration": "Varighet"
+	}
+}

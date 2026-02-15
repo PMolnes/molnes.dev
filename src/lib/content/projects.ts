@@ -31,7 +31,18 @@ export const projects: Project[] = [
 				title: 'Deobfuscator Repository'
 			}
 		],
-		technologies: ['Python', 'Java', 'OpenAI', 'Gemini', 'Milvus', 'JavaParser', 'GitHub']
+		technologies: ['Python', 'Java', 'OpenAI', 'Gemini', 'Milvus', 'JavaParser', 'GitHub'],
+		nb: {
+			description:
+				'Bruk av LLM-er for å oppdage skadelig programvare og klassifisere CVE-sårbarheter fra dekompilerte Java-binærfiler.',
+			about:
+				'Dette er prosjektet jeg og Eduard skapte for vår masteroppgave i datateknologi ved NTNU Trondheim. Oppgaven utforsker om store språkmodeller (LLM-er) uten finjustering kan brukes til å oppdage ondsinnede mønstre i kode, spesifikt i JAR-filer. Videre utforsker den LLM-ers evne til å identifisere hvilke sårbarheter skadelig programvare utnytter.\nResultatet er en statisk analysepipeline bestående av dekompilering, deobfuskering, LLM-oppsummering av kode, likhetsøk mot en vektordatabase av CVE-er, og CVE-klassifisering ved hjelp av LLM-er. Systemet støtter flere LLM-leverandører, inkludert OpenAI, Gemini, og selvhostede modeller som Llama. Et tilpasset Java-deobfuskeringsverktøy ble også utviklet som en del av dette prosjektet, ved bruk av JavaParser for å løse obfuskerte strengliteraler i dekompilert kode.',
+			challenges:
+				'En kritisk utfordring var mangelen på åpen kildekode-verktøy for deobfuskering av Java. Eksisterende verktøy som Java Deobfuscator klarte ikke å oppdage obfuskeringsmønstre på tvers av skadelig programvare-datasettet. Derfor skapte vi et tilpasset deobfuskeringsverktøy ved hjelp av JavaParser for å løse obfuskerte strengliteraler, noe som viste seg å være viktig for at LLM-en skulle forstå koden og generere nøyaktige søkeforespørsler.\nEn annen utfordring var likhetsøket for CVE-klassifisering. Mange CVE-er har lignende beskrivelser, og noen er uspesifiserte, noe som gjør det vanskelig å hente korrekt sårbarhet. Vi brukte cosinus-likhet med en Milvus vektordatabase for å søke etter relevante CVE-er, og itererte på genereringen av søkeforespørsler for å forbedre resultatene.\nÅ arbeide med levende skadelig programvare krevde strenge sikkerhetstiltak. All utvikling som involverte skadelig programvare foregikk i isolerte miljøer ved hjelp av GitHub Codespaces, og databasen ble hostet på en separat Hetzner Cloud-server for å isolere den fra kjøremiljøet for skadelig programvare.',
+			results:
+				'For oppdagelse av skadelig programvare oppnådde systemet 97% gjennomsnittlig nøyaktighet på tvers av 3839 analyserte JAR-binærfiler uten noen finjustering, kun ved bruk av zero-shot prompting. Dette konkurrerer med LLM-er som er finjustert på ondsinnet/godartet datasett.\nFor CVE-klassifisering oppnådde O4-mini-modellen 60,8% recall@10, 42% nøyaktighet og 69% betinget nøyaktighet. Disse resultatene er den første empiriske evalueringen av CVE-attribusjon utført direkte på tusenvis av obfuskerte og kompilerte ondsinnede binærfiler, og etablerer en baseline for fremtidig forskning.\nDet resulterende systemet analyserer filer til en kostnad på omtrent $0,03 USD per fil, noe som er 60 til 88 ganger rimeligere enn kommersielle verktøy som VirusTotal og CrowdStrike Falcon. Dette senker terskelen for organisasjoner til å utføre analyse av skadelig programvare.',
+			myRoles: ['Utvikler', 'Forsker']
+		}
 	},
 	{
 		name: 'Voice Pluck',
@@ -75,7 +86,18 @@ export const projects: Project[] = [
 				title: 'IaC Repository'
 			}
 		],
-		technologies: ['Swift', 'Spring Boot', 'Keycloak', 'Terraform', 'GitLab']
+		technologies: ['Swift', 'Spring Boot', 'Keycloak', 'Terraform', 'GitLab'],
+		nb: {
+			description:
+				'Lagerstyringssystem og iOS-app med stemmegrensesnitt for stabling av produkter.',
+			about:
+				'Voice Pluck er prosjektet jeg og tre andre studenter skapte for vår bacheloroppgave ved NTNU. Solwr spesialiserer seg på logistikk og tilbyr et stemmegjenkjenningssystem til lagre, som hjelper dem å laste ordrer mer effektivt. Det eksisterende systemet fungerte, men ikke optimalt. Det brukte kun et stemmegrensesnitt, og noen oppgaver i et lager løses i utgangspunktet mindre effektivt uten et berøringsgrensesnitt. I tillegg brukte Solwr en dyr tredjeparts programvare for å håndtere stemmegjenkjenning.\nDerfor ga Solwr oss oppgaven med å lage en mobilapplikasjon som håndterte stemmegjenkjenningen uten behov for et betalt bibliotek, og med tillegg av et berøringsgrensesnitt. Vi skapte også et REST API som fungerer som et lagerstyringssystem. WMS-en støtter å legge til, fjerne og oppdatere produkter, ordrer og brukere. Sist, men ikke minst, undersøkte vi en måte å implementere en smartklokke-applikasjon med stemmegjenkjenning på.',
+			challenges:
+				'Fra prosjektbeskrivelse til tekniske funksjoner ga prosjektet teamet flere utfordringer. Den innledende prosjektbeskrivelsen var noe vag. Så den første utfordringen i prosjektet var å forstå brukerkravene og behovene. For å løse dette jobbet hele teamet en dag i et lager for å forstå arbeidsflyten til sluttbrukerne.\nTalegjenkjenning brakte en rekke utfordringer inn i prosjektet vårt. Lageret er et støyende miljø, parsing av input, brukerpersonvern, internettforbindelse, listen fortsetter. Vi løste dette ved å bruke <a class="underline" target="_blank" href="https://developer.apple.com/documentation/speech/sfspeechrecognizer">Apples SFSpeechRecognition</a>-bibliotek.\nVi forsto også raskt at sluttbrukeren måtte kunne bruke stemmegrensesnittet og berøringsgrensesnittet sømløst. Det er flere steg i prosessen med å forberede en ordre for transport. For at brukeren skulle kunne bytte mellom grensesnitt sømløst, trengte vi en måte å holde oversikt over det nåværende steget i plukkprosessen. Vi løste dette ved å bruke en PluckService som holder oversikt over det nåværende steget og eksponerer en doAction-metode. Denne metoden ble utført når et nøkkelord ble gjenkjent, eller brukeren trykket på spesifikke knapper i appen.\nÅ lage REST API-et var heller ingen enkel oppgave. Det er komplekse relasjoner mellom entiteter i et lagermiljø. Grundig testing gjorde det lettere å implementere alle disse entitetene korrekt. Jeg oppfordrer deg til å lese mer om utfordringene i prosjektet vårt i rapporten vår.',
+			results:
+				'Prosjektet vårt hadde et bredt omfang og mange muligheter. Det ferdige produktet besto av en iOS-app med autentisering, talegjenkjenning, tekst-til-tale, et WMS REST API, og en implementeringsplan for en WatchOS-app med stemmegjenkjenning. Viktigst av alt lærte teamet mye av dette prosjektet. Alt fra iOS-utvikling med Swift, Spring Boot REST API-utvikling, autentisering med Keycloak, testing, og ikke-tekniske ferdigheter som smidig utvikling og undersøkelse av brukerkrav. Som teamleder lærte jeg også mye om å administrere Jira og adressere tidslinjeproblemer med teamet.',
+			myRoles: ['Teamleder', 'Full Stack-utvikler']
+		}
 	},
 	{
 		name: 'petterinit',
@@ -107,7 +129,17 @@ export const projects: Project[] = [
 				title: 'Repository',
 				href: 'https://github.com/PMolnes/petter-init'
 			}
-		]
+		],
+		nb: {
+			description: 'Automatiser oppsett av TailwindCSS i React, Vue og SvelteKit.',
+			about:
+				'På et tidspunkt fant jeg meg selv i å gjenta de samme stegene for å sette opp TailwindCSS for mine nye prosjekter. Bla til installasjonsveiledningen, installere avhengigheter, kopiere og lime inn konfigurasjonsfiler, osv.\nSiden jeg ofte skapte små prosjekter for å teste en idé, bestemte jeg meg for å automatisere disse kjedelige trinnene. petter-init er et CLI-verktøy du kan installere fra <a target="_blank" href="https://www.npmjs.com/package/petter-init">npmjs.com</a>. Verktøyet lar deg velge enten React, Vue eller SvelteKit, scaffolder et nytt prosjekt med dine valgte alternativer, og konfigurerer fullstendig TailWindCSS for prosjektet ditt. Du kan umiddelbart begynne å skrive ut TailwindCSS-klasser i stedet for å måtte sette det opp manuelt først.\nFor en detaljert forklaring på hvordan det fungerer, kan du besøke dokumentasjonen for dette prosjektet.',
+			challenges:
+				'Før jeg skrev koden fant jeg det vanskelig å måle størrelsen på dette prosjektet. Opprinnelig tenkte jeg dette ville være et lite ett-fils-skript, og valgte derfor å bruke JavaScript. I ettertid burde jeg ha valgt TypeScript til dette prosjektet. Når jeg kom tilbake til dette prosjektet for å fikse en feil eller oppdatere malene, fant jeg meg selv fortapt, til tross for den detaljerte dokumentasjonen. Utvikleropplevelsen med JavaScript sammenlignet med TypeScript er rett og slett forferdelig. I tillegg ville bruk av TypeScript gjøre det lettere hvis andre utviklere ønsket å jobbe på prosjektet. Å migrere til TypeScript ville vært gunstig, men jeg kom aldri til å gjøre det.\nEn annen utfordring var testing. For å sikre at scaffoldingen av prosjekter fungerte ordentlig, stolte jeg på tester. Testene scaffolder et prosjekt for hvert rammeverk jeg støtter, og sjekker at de riktige filene blir opprettet i det nye prosjektet. Disse testene er nyttige, men de tar en stund å fullføre. Imidlertid sikrer disse testene bare at filene blir opprettet. Dette betyr ikke at Tailwind fungerer korrekt. Jeg innså at jeg måtte lage tester som sikrer at applikasjonen kan kjøre, og at Tailwind-klassene fungerer ordentlig.',
+			results:
+				'Resultatet av dette prosjektet omfatter et CLI-verktøy tilgjengelig som en global npm-pakke, og en dokumentasjonsnettside laget med Vitepress. Jeg lærte hvordan man publiserer pakker til npm, og forbedret mine testferdigheter. Verktøyet har spart meg mye tid ved oppsett av TailwindCSS, og jeg vil fortsette å oppdatere prosjektet. Til tross for nevnte utfordringer er jeg grundig fornøyd med resultatet.',
+			myRoles: ['Solo-utvikler']
+		}
 	},
 	{
 		name: 'SolwrSolwr',
@@ -132,7 +164,18 @@ export const projects: Project[] = [
 				href: 'https://github.com/PMolnes/tilegame-vuets',
 				title: 'Repository'
 			}
-		]
+		],
+		nb: {
+			description:
+				'Et flispuslespill for å konkurrere med kolleger om å få raskest tid eller færrest trekk til å løse puslespillet.',
+			about:
+				'SolwrSolwr er et flispuslespill der målet er å løse puslespillet som viser logoen til selskapet, Solwr. Jeg laget opprinnelig dette prosjektet da jeg begynte å lære React. Men etter hvert som jeg lærte nye teknologier, begynte jeg å gjenskape prosjektet. Én gang da jeg lærte Vue, en andre gang da jeg lærte TypeScript, og en tredje gang da jeg lærte TailwindCSS. Dermed har dette prosjektet blitt min boilerplate-app for å teste ut en ny teknologi. For øyeblikket består den av en Vue med TypeScript & Tailwind front-end, og en Firebase back-end. Firebase websockets gir live-oppdateringer til poengtavlene når noen setter en ny toppskår.',
+			challenges:
+				'Dette prosjektet var utfordrende for meg, ettersom det var en av mine første ordentlige nettapper. Jeg vil si at den største utfordringen var at jeg startet prosjektet på nytt om og om igjen. Hver gang jeg ønsket å bruke en ny teknologi startet jeg hele prosjektet på nytt. Dette forårsaket mye dobbeltarbeid, jeg fant meg selv i å ikke lære noe nytt utover det grunnleggende i nye teknologier, og ikke egentlig bli utfordret.',
+			results:
+				'Til tross for at det ikke er mitt stolteste prosjekt, er jeg fornøyd med resultatene. Det er et kult prosjekt som var moro å lage. Sluttresultatet er en hostet Vue.js-app, Firebase backend, og Firebase websockets for å inkludere live-oppdateringer av toppscore. Jeg fikk også tilbakemelding fra mine kolleger om at det var et fint initiativ. Det hadde vært kult å legge til autentisering integrert med Azure Directory slik at bare ansatte i Solwr kunne lagre toppscore.',
+			myRoles: ['Solo-utvikler']
+		}
 	},
 	{
 		name: 'Trails',
@@ -153,6 +196,17 @@ export const projects: Project[] = [
 			'Following people',
 			'User Authentication'
 		],
-		technologies: ['Flutter', 'Firebase', 'Google Maps API', 'GitHub']
+		technologies: ['Flutter', 'Firebase', 'Google Maps API', 'GitHub'],
+		nb: {
+			description:
+				'En sosial media-mobilapplikasjon for Android og iOS for å dele og rangere turer rundt i Norge.',
+			about:
+				'Trails ble skapt av meg og tre andre studenter til et emne i mobilapplikasjoner. Vi laget appen ved hjelp av Flutter og Firebase Firestore. Appen er en sosial medieapp inspirert av Instagram, men med fokus på deling og rangering av turer. Den lar brukere finne nye turer på et kart, og se på innlegg fra spesifikke turer, eller innleggene til vennene dine. Appen ble laget i løpet av tre måneder, men inneholder mange funksjoner: full autentiseringsflyt, følgere/følger, likes, bildeopplasting, søk etter brukere, mørk/lys modus basert på system.',
+			challenges:
+				'Dette prosjektet var ekstremt lærerikt siden det var første gang for alle å lage en mobilapplikasjon. Den største utfordringen vi møtte som gruppe var xcodeproj-filen. Den skulle ikke være gitignored, men den forårsaket konsekvent merge-konflikter som var vanskelig å løse.',
+			results:
+				'Gruppen var ekstremt fornøyd med resultatene. Vi klarte å lage en sosial medieplattform samtidig som vi lærte Flutter på tre måneder. Prosjektet gikk så bra at flere medlemmer av gruppen vår fortsatte å jobbe med appen etterpå. I tillegg valgte noen av oss å lage en mobilapp for bachelorprosjektet vårt.',
+			myRoles: ['Teamleder', 'Utvikler']
+		}
 	}
 ];
