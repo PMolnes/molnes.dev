@@ -2,6 +2,38 @@ import type { Project } from '../types';
 
 export const projects: Project[] = [
 	{
+		name: 'Master Thesis',
+		description:
+			'Using LLMs to detect malware and classify CVE vulnerabilities from decompiled Java binaries.',
+		slug: 'master-thesis',
+		about:
+			'This is the project me and Eduard created for our Master Thesis in Computer Science at NTNU Trondheim. The thesis explores whether large language models (LLMs) without fine-tuning can be leveraged to detect malicious behaviour in code, specifically in JAR files. Furthermore, it explores the capabilities of LLMs to identify which vulnerabilities the malware exploits.\nThe result is a static analysis pipeline consisting of decompilation, deobfuscation, LLM summarisation of code, similarity search against a vector database of CVEs, and CVE classification using LLMs. The system supports multiple LLM providers, including OpenAI, Gemini, and self-hosted models such as Llama. A custom Java deobfuscation tool was also created as part of this project, using JavaParser to resolve obfuscated string literals in decompiled code.',
+		challenges:
+			'A critical challenge was the lack of open-source deobfuscation tools for Java. Existing tools like Java Deobfuscator were unable to detect obfuscation patterns across the malware dataset. Therefore, we created a custom deobfuscation tool using JavaParser to resolve obfuscated string literals, which proved important for the LLM to understand the code and generate accurate search queries.\nAnother challenge was the similarity search for CVE classification. Many CVEs have similar descriptions, and some are unspecified, making it difficult to retrieve the correct vulnerability. We used cosine similarity with a Milvus vector database to search for relevant CVEs, and iterated on the search query generation to improve results.\nWorking with live malware required strict security measures. All development involving malware occurred in contained environments using GitHub Codespaces, and the database was hosted on a separate Hetzner Cloud server to isolate it from the malware execution environment.',
+		results:
+			'For malware detection, the system achieved 97% mean accuracy across 3839 analysed JAR binaries without any fine-tuning, relying solely on zero-shot prompting. This competes with LLMs fine-tuned on malicious/benign datasets.\nFor CVE classification, the O4-mini model achieved a 60.8% recall@10, 42% accuracy, and 69% conditional accuracy. These results are the first empirical assessment of CVE attribution performed directly on thousands of obfuscated and compiled malicious binaries, establishing a baseline for future research.\nThe resulting system analyses files at a cost of approximately $0.03 USD per file, which is 60 to 88 times less expensive than commercial tools such as VirusTotal and CrowdStrike Falcon. This lowers the barrier for organisations to conduct malware analysis.',
+		myRoles: ['Developer', 'Researcher'],
+		features: [
+			'LLM-based Malware Detection',
+			'CVE Vulnerability Classification',
+			'Java Decompilation and Deobfuscation',
+			'Vector Similarity Search with Milvus',
+			'Retrieval-Augmented Generation (RAG)',
+			'Multi-LLM Provider Support'
+		],
+		links: [
+			{
+				href: 'https://nva.sikt.no/registration/019a0aba340e-dece8044-9391-4821-9232-44f6e94ba0a6',
+				title: 'Thesis'
+			},
+			{
+				href: 'https://github.com/PMolnes/simple-java-deobfuscator',
+				title: 'Deobfuscator Repository'
+			}
+		],
+		technologies: ['Python', 'Java', 'OpenAI', 'Gemini', 'Milvus', 'JavaParser', 'GitHub']
+	},
+	{
 		name: 'Voice Pluck',
 		description:
 			'Warehouse Management System and iOS app with a voice interface for stacking products.',
