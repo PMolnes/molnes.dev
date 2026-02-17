@@ -30,7 +30,9 @@
 				src="/assets/images/sopra-portrett.jpg"
 				alt="Portrait"
 			/>
-			<a class="underline text-sm sm:text-base" href="https://github.com/PMolnes" target="_blank">GitHub</a>
+			<a class="underline text-sm sm:text-base" href="https://github.com/PMolnes" target="_blank"
+				>GitHub</a
+			>
 			<a
 				class="underline text-sm sm:text-base"
 				href="https://www.linkedin.com/in/petter-molnes-532596202/"
@@ -38,7 +40,9 @@
 			>
 		</div>
 	</div>
-	<div class="min-h-screen lg:px-24 md:px-16 lg:max-w-[800px] sm:px-12 px-4 py-12 sm:py-16 lg:py-20">
+	<div
+		class="min-h-screen lg:px-24 md:px-16 lg:max-w-[800px] sm:px-12 px-4 py-12 sm:py-16 lg:py-20"
+	>
 		<ProjectList />
 		<ExperienceList />
 		<EducationList />
